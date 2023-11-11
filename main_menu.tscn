@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://80dc5v8fwgt4"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_pnscu"]
+[ext_resource type="PackedScene" uid="uid://mwcq6tvkqdmw" path="res://button_plus.tscn" id="2_milb2"]
+[ext_resource type="AudioStream" uid="uid://vvg55mav62qr" path="res://song_files/Horse cock.wav" id="2_rtiht"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_pnscu")
+
+[node name="PlayerSelect" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -52.0
+offset_right = 142.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlayerSelect"]
+layout_mode = 2
+text = "Player select"
+
+[node name="OnePlayer" parent="PlayerSelect" instance=ExtResource("2_milb2")]
+layout_mode = 2
+text = "One Player"
+
+[node name="TwoPlayer" parent="PlayerSelect" instance=ExtResource("2_milb2")]
+layout_mode = 2
+text = "Two Players"
+
+[node name="SongSelect" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -142.0
+offset_right = 143.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Songs" type="VBoxContainer" parent="SongSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rtiht")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
+
+[node name="Main" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 2.08165e-12)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.5
+offset_top = -115.0
+offset_right = 293.5
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "U & I DANCE BATTLE"
+
+[node name="Start" parent="Main" instance=ExtResource("2_milb2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[connection signal="pressed" from="PlayerSelect/OnePlayer" to="." method="_on_one_player_pressed"]
+[connection signal="pressed" from="PlayerSelect/TwoPlayer" to="." method="_on_two_player_pressed"]
+[connection signal="pressed" from="Main/Start" to="." method="_on_start_pressed"]

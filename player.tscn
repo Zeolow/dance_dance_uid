@@ -1,0 +1,161 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1hd71esgoyr7"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_yyoex"]
+[ext_resource type="Texture2D" uid="uid://gf28tcd1dcmu" path="res://arrow_home_placeholder.svg" id="2_ftbha"]
+
+[sub_resource type="Theme" id="Theme_qdhwq"]
+default_font_size = 30
+
+[node name="Player" type="Node2D"]
+position = Vector2(40, 40)
+script = ExtResource("1_yyoex")
+
+[node name="ArrowHome" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="ArrowHome"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowHome/Left"]
+texture_filter = 1
+position = Vector2(33, 22)
+texture = ExtResource("2_ftbha")
+
+[node name="Down" type="Node2D" parent="ArrowHome"]
+position = Vector2(96, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowHome/Down"]
+texture_filter = 1
+position = Vector2(33, 22)
+rotation = -1.5708
+texture = ExtResource("2_ftbha")
+
+[node name="Up" type="Node2D" parent="ArrowHome"]
+position = Vector2(192, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowHome/Up"]
+texture_filter = 1
+position = Vector2(33, 22)
+rotation = 1.5708
+texture = ExtResource("2_ftbha")
+
+[node name="Right" type="Node2D" parent="ArrowHome"]
+position = Vector2(288, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ArrowHome/Right"]
+texture_filter = 1
+position = Vector2(33, 22)
+rotation = 3.14159
+texture = ExtResource("2_ftbha")
+
+[node name="Arrows" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 320)
+
+[node name="Debug" type="VBoxContainer" parent="."]
+offset_left = 448.0
+offset_right = 570.0
+offset_bottom = 40.0
+theme = SubResource("Theme_qdhwq")
+
+[node name="Index" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Index"]
+layout_mode = 2
+text = "current_index: "
+
+[node name="Index" type="Label" parent="Debug/Index"]
+layout_mode = 2
+text = "0"
+
+[node name="CurrentArrowObj" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/CurrentArrowObj"]
+layout_mode = 2
+text = "current_arrow_object"
+
+[node name="ArrObjName" type="Label" parent="Debug/CurrentArrowObj"]
+layout_mode = 2
+text = "0"
+
+[node name="Toggled" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Toggled"]
+layout_mode = 2
+text = "current_toggle"
+
+[node name="Toggled" type="Label" parent="Debug/Toggled"]
+layout_mode = 2
+text = "0"
+
+[node name="Score" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Score"]
+layout_mode = 2
+text = "score: "
+
+[node name="Score" type="Label" parent="Debug/Score"]
+layout_mode = 2
+text = "0"
+
+[node name="Combo" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Combo"]
+layout_mode = 2
+text = "combo: "
+
+[node name="Combo" type="Label" parent="Debug/Combo"]
+layout_mode = 2
+text = "0"
+
+[node name="Multiplier" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Multiplier"]
+layout_mode = 2
+text = "multiplier: "
+
+[node name="Multiplier" type="Label" parent="Debug/Multiplier"]
+layout_mode = 2
+text = "0"
+
+[node name="Evaluation" type="HBoxContainer" parent="Debug"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "evaluation: "
+
+[node name="0" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "⇦"
+
+[node name="E0" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "_______"
+
+[node name="1" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "⇩"
+
+[node name="E1" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "_______"
+
+[node name="2" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "⇩"
+
+[node name="E2" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "_______"
+
+[node name="3" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "⇩"
+
+[node name="E3" type="Label" parent="Debug/Evaluation"]
+layout_mode = 2
+text = "_______"

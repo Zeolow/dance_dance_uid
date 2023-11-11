@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://mwcq6tvkqdmw"]
+
+[ext_resource type="Script" path="res://ButtonPlus.gd" id="1_qv4ip"]
+[ext_resource type="AudioStream" uid="uid://c1u8jm7g4uy40" path="res://sfx/navigate.wav" id="2_7kwg1"]
+[ext_resource type="AudioStream" uid="uid://cfxi077u3eube" path="res://sfx/Enter.wav" id="3_y5u8w"]
+
+[node name="ButtonPlus" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_qv4ip")
+
+[node name="Focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7kwg1")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y5u8w")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

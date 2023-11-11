@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds0ifq1qlnwci"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_8rg6r"]
+[ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="3_rt6i8"]
+[ext_resource type="PackedScene" uid="uid://mwcq6tvkqdmw" path="res://button_plus.tscn" id="4_i5p1w"]
+[ext_resource type="AudioStream" uid="uid://b2vonf6ftjxnx" path="res://sfx/321 go.wav" id="4_ly35q"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_8rg6r")
+player_scene_path = "res://player.tscn"
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rt6i8")
+bus = &"Song"
+
+[node name="PauseScreen" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+text = "Game Paused"
+
+[node name="Restart" parent="PauseScreen/VBoxContainer" instance=ExtResource("4_i5p1w")]
+layout_mode = 2
+text = "Restart"
+focus_on_visibility = true
+
+[node name="Menu" parent="PauseScreen/VBoxContainer" instance=ExtResource("4_i5p1w")]
+layout_mode = 2
+text = "Menu"
+
+[node name="CountDown" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CountDown"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -68.5
+offset_right = 20.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "3"
+
+[node name="Timer" type="Timer" parent="CountDown"]
+wait_time = 4.0
+one_shot = true
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="CountDown"]
+stream = ExtResource("4_ly35q")
+
+[node name="WinScreen" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -107.0
+offset_right = 81.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="WinScreen/VBoxContainer"]
+layout_mode = 2
+text = "TEXT"
+
+[node name="Score" type="Label" parent="WinScreen/VBoxContainer"]
+layout_mode = 2
+text = "SCORE"
+
+[node name="Restart" parent="WinScreen/VBoxContainer" instance=ExtResource("4_i5p1w")]
+layout_mode = 2
+text = "Restart"
+focus_on_visibility = true
+
+[node name="Menu" parent="WinScreen/VBoxContainer" instance=ExtResource("4_i5p1w")]
+layout_mode = 2
+text = "Menu"
+
+[connection signal="finished" from="Song" to="." method="_on_song_finished"]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="timeout" from="CountDown/Timer" to="." method="_on_count_down_timer_timeout"]
+[connection signal="pressed" from="WinScreen/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="WinScreen/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

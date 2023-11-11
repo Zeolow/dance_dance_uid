@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh8qlqu7w034s"]
+
+[ext_resource type="Script" path="res://song_button.gd" id="1_acpfs"]
+[ext_resource type="AudioStream" uid="uid://c1u8jm7g4uy40" path="res://sfx/navigate.wav" id="2_f0jyy"]
+[ext_resource type="AudioStream" uid="uid://cfxi077u3eube" path="res://sfx/Enter.wav" id="3_k8po8"]
+
+[node name="SongButton" type="Button"]
+text = "Känner du någon med blöja"
+script = ExtResource("1_acpfs")
+
+[node name="Focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_f0jyy")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k8po8")
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
