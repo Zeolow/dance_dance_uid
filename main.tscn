@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dojeipwis0umx"]
+[gd_scene load_steps=10 format=3 uid="uid://dojeipwis0umx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_08eyw"]
 [ext_resource type="Script" path="res://song.gd" id="2_782eh"]
 [ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="3_cfc10"]
+[ext_resource type="PackedScene" uid="uid://dldvmq5n5ud76" path="res://demian.tscn" id="4_sonkn"]
 
 [sub_resource type="Resource" id="Resource_at6er"]
 script = ExtResource("2_782eh")
@@ -23,7 +24,12 @@ song_name = "Cool låt"
 bpm = 200
 arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]
 
-[sub_resource type="BoxMesh" id="BoxMesh_a11k2"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_t3q72"]
+
+[sub_resource type="Environment" id="Environment_omioe"]
+background_mode = 1
+background_color = Color(0.8, 0.8, 0.8, 1)
+ambient_light_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_08eyw")
@@ -32,11 +38,20 @@ main_menu_scene_path = "res://main_menu.tscn"
 songs = Array[ExtResource("2_782eh")]([SubResource("Resource_at6er"), SubResource("Resource_u1i7d"), SubResource("Resource_to3at")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.944083, 0.329707, 0, -0.329707, 0.944083, 0, 1.31435, 2.87586)
+transform = Transform3D(1, 0, 0, 0, 0.944083, 0.329707, 0, -0.329707, 0.944083, 0, 2.49215, 3.41369)
 current = true
+fov = 75.8
+near = 0.055
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_a11k2")
+transform = Transform3D(6.12774, 0, 0, 0, 0.0267176, 0, 0, 0, 6.12774, 0, -0.00826323, 0)
+mesh = SubResource("CylinderMesh_t3q72")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0210122, 0.874807, -0.484016, -3.26074e-17, 0.484123, 0.875, 0.999779, 0.0183857, -0.0101725, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_omioe")
+
+[node name="Node3D" parent="." instance=ExtResource("4_sonkn")]
+transform = Transform3D(0.161166, 0, 0, 0, 0.161166, 0, 0, 0, 0.161166, 0, 0, 0)

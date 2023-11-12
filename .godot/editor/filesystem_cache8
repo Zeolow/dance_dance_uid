@@ -1,31 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699713259
+::res://::1699728264
 arrow_home_placeholder.svg::CompressedTexture2D::433154241806482508::1699457985::1699713260::1::::<><>::
 arrow_object.gd::GDScript::-1::1699704559::0::1::::<>Node2D<>::
-arrow_object.tscn::PackedScene::7598733373745401884::1699712715::0::1::::<><>::uid://ceqdjy8qp7tev::::res://arrow_placeholder.svg<>res://arrow_object.gd
+arrow_object.tscn::PackedScene::7598733373745401884::1699712715::0::1::::<><>::uid://ceqdjy8qp7tev
 arrow_placeholder.svg::CompressedTexture2D::5086826321413972377::1699457871::1699713260::1::::<><>::
 ButtonPlus.gd::GDScript::-1::1699662862::0::1::::ButtonPlus<>Button<>::
-button_plus.tscn::PackedScene::887834099476993338::1699712715::0::1::::<><>::res://ButtonPlus.gd<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://cfxi077u3eube::::res://sfx/Enter.wav
+button_plus.tscn::PackedScene::887834099476993338::1699712715::0::1::::<><>::res://ButtonPlus.gd<>uid://c1u8jm7g4uy40
+CitypopMainDEMO-Regular.ttf::FontFile::6940513427930687261::1699722454::1699722454::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::2974692712876848473::1699646353::0::1::::<><>::
+demian.glb::PackedScene::5649973512218820081::1699727571::1699727806::1::::<><>::
+demian.tscn::PackedScene::7938829838084069259::1699728206::0::1::::<><>::
 game.gd::GDScript::-1::1699704851::0::1::::<>Node3D<>::
-game.tscn::PackedScene::8474766226607756732::1699712715::0::1::::<><>::res://game.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://b2vonf6ftjxnx::::res://sfx/321 go.wav
+game.tscn::PackedScene::8474766226607756732::1699712715::0::1::::<><>::res://game.gd<>uid://bkiibk2d1crq6
 Globals.gd::GDScript::-1::1699706632::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::1070766656262614419::1699454248::1699713260::1::::<><>::
 main.gd::GDScript::-1::1699707305::0::1::::<>Node3D<>::
-main.tscn::PackedScene::8160743238345092455::1699712715::0::1::::<><>::res://main.gd<>res://song.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav
+main.tscn::PackedScene::8160743238345092455::1699728239::0::1::::<><>::res://main.gd<>res://song.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav
 MainMenu.gd::GDScript::-1::1699707726::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::2368028616120992283::1699712715::0::1::::<><>::res://MainMenu.gd<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://vvg55mav62qr::::res://song_files/Horse cock.wav
+main_menu.tscn::PackedScene::2368028616120992283::1699728206::0::1::::<><>::res://MainMenu.gd<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://vvg55mav62qr::::res://song_files/Horse cock.wav<>uid://c55bih56qgn0h::::res://CitypopMainDEMO-Regular.ttf
 Player.gd::GDScript::-1::1699708254::0::1::::Player<>Node2D<>::
-player.tscn::PackedScene::8998863298942575314::1699712715::0::1::::<><>::res://Player.gd<>uid://gf28tcd1dcmu::::res://arrow_home_placeholder.svg
+player.tscn::PackedScene::8998863298942575314::1699712715::0::1::::<><>::res://Player.gd<>uid://gf28tcd1dcmu
 song.gd::GDScript::-1::1699645966::0::1::::Song<>Resource<>::
-song.tres::Resource/Song::8119889779191612042::1699630014::0::1::::<><>::res://song.gd
+song.tres::Resource/Resource::8119889779191612042::1699630014::0::1::::<><>::res://song.gd
 song_button.gd::GDScript::-1::1699707466::0::1::::<>Button<>::
-song_button.tscn::PackedScene::7719700410800759300::1699712715::0::1::::<><>::res://song_button.gd<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://cfxi077u3eube::::res://sfx/Enter.wav
-::res://sfx/::1699645973
+song_button.tscn::PackedScene::7719700410800759300::1699712715::0::1::::<><>::res://song_button.gd<>uid://c1u8jm7g4uy40
+::res://sfx/::1699713260
 321 go.wav::AudioStreamWAV::4325744958733360773::1699645973::1699713260::1::::<><>::
 Enter.wav::AudioStreamWAV::5171798385836745174::1699645973::1699713260::1::::<><>::
 navigate.wav::AudioStreamWAV::6641059269988801155::1699645973::1699713260::1::::<><>::
-::res://song_files/::1699645967
+::res://song_files/::1699713260
 haru blöjja 3.wav::AudioStreamWAV::3105312230956310227::1699471508::1699713260::1::::<><>::
 Horse cock.wav::AudioStreamWAV::1517737119275151589::1699641650::1699713260::1::::<><>::
 ::res://song_res/::1699645959
