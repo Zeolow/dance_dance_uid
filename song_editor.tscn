@@ -69,3 +69,43 @@ offset_right = 8.0
 offset_bottom = 1435.0
 grow_horizontal = 0
 theme_override_constants/separation = 0
+
+[node name="SongControls" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = 304.0
+offset_bottom = -304.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="SongControls"]
+layout_mode = 2
+text = "play"
+
+[node name="ElapsedTime" type="HBoxContainer" parent="SongControls"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SongControls/ElapsedTime"]
+layout_mode = 2
+text = "Elapsed time:"
+
+[node name="Time" type="Label" parent="SongControls/ElapsedTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00.00"
+horizontal_alignment = 2
+
+[node name="Pause" type="Button" parent="SongControls"]
+layout_mode = 2
+text = "pause"
+
+[node name="CheckButton" type="CheckButton" parent="SongControls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Auto Progress"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

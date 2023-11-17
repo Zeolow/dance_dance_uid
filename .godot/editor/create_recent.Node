@@ -1,11 +1,13 @@
-Button
+AudioStreamPlayer
 Label
+HBoxContainer
+WorldEnvironment
+CheckButton
+Button
+VBoxContainer
 Control
 Timer
 Panel
-HBoxContainer
-CheckButton
-VBoxContainer
 ScrollContainer
 VSeparator
 Node2D
@@ -18,4 +20,3 @@ HSeparator
 PanelContainer
 MarginContainer
 Container
-WorldEnvironment

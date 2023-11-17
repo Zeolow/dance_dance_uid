@@ -9,16 +9,27 @@ var total_beats: float = 1.0
 var arrow_edit_object_scene = preload("res://arrow_edit_object.tscn")
 var focused_arrow_object: ArrowEditObject
 var focused_index: int = 0
+var song_length_sec: float
+var song_time
+var arrow_container_start_y: float
 
+@onready var songControls: VBoxContainer = $SongControls
+@onready var audioStreamPlayer: AudioStreamPlayer = $AudioStreamPlayer 
 @onready var snapTimer: Timer = $SnapTimer
 @onready var arrowContainer: VBoxContainer = $Control/ArrowContainer
 @onready var focusPanel: Panel = $Control/FocusPanel
 
 
 func _ready():
-	print(str(calc_total_beats()))
+	audioStreamPlayer.stream = song.song_file
+	audioStreamPlayer.play()
+	
+	var total_beats = calc_total_beats()
+	var song_length_sec = song.song_file.get_length()
+	arrow_container_start_y = arrowContainer.position.y
+	
 	var arrow_container_origin_y = arrowContainer.position.y
-	for i in range(calc_total_beats()):
+	for i in range(total_beats):
 		#if song.arrows has beat toggle correct
 		var arrow_object = arrow_edit_object_scene.instantiate()
 		arrow_object.name = str(i)
@@ -29,6 +40,7 @@ func _ready():
 	arrow_height = arrowContainer.get_child(0).size.y
 
 func _process(delta):
+	update_arrow_positions()
 	arrow_container_prev_y = arrowContainer.position.y
 	if Input.is_action_just_pressed("shift_down"):
 		arrowContainer.position.y -= arrow_height
@@ -52,10 +64,27 @@ func _process(delta):
 			focused_arrow_object.toggle_button(2)
 		if Input.is_action_just_pressed("right"):
 			focused_arrow_object.toggle_button(3)
-		
+	
+	update_display_data()
 
-func current_playback_time() -> float:
-	var time: float = $Player.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
+func update_arrow_positions() -> void:
+	var t = audioStreamPlayer.get_playback_position()
+	print("Time", t)
+	var t_tot = song.song_file.get_length()
+	var v = -1 * arrowContainer.size.y / t_tot
+	print("V", v)
+	var pos = v * t + arrow_container_start_y
+	arrowContainer.position.y = pos
+	print(pos)
+
+func update_display_data() -> void:
+	$SongControls/ElapsedTime/Time.text = str(audioStreamPlayer.get_playback_position())
+
+func set_current_playback_time() -> void:
+	pass
+
+func get_current_playback_time() -> float:
+	var time: float = audioStreamPlayer.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 	return time
 
 func calc_total_beats() -> int:
