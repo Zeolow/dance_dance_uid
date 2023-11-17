@@ -77,6 +77,8 @@ func spawn_player(player_nr: int) -> Player:
 		2: 
 			player.position = Vector2(1216, 40)
 			player.action_codes = ["p2_left", "p2_down", "p2_up", "p2_right"]
+	player.player_nr = player_nr
+	player.score_updated.connect(_on_player_score_updated)
 	add_child(player)
 	print(player)
 	return player
@@ -146,3 +148,10 @@ func _on_song_finished():
 			winScreenLabel.text = "PLAYER 2 WON!"
 			score = players[1].score
 	winScreenScore.text = "Score: " + str(score)
+
+func _on_player_score_updated(score: int, player_nr: int):
+	match player_nr:
+		1:
+			$Score/P1Score.text = str(score)
+		2:
+			$Score/P2Score.text = str(score)

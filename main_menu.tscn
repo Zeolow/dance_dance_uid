@@ -1,9 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://80dc5v8fwgt4"]
+[gd_scene load_steps=19 format=3 uid="uid://80dc5v8fwgt4"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_pnscu"]
+[ext_resource type="Texture2D" uid="uid://i2ayi0pnkcyc" path="res://assets/ui/menu_text-26.svg" id="2_1u3o8"]
 [ext_resource type="PackedScene" uid="uid://mwcq6tvkqdmw" path="res://button_plus.tscn" id="2_milb2"]
 [ext_resource type="AudioStream" uid="uid://vvg55mav62qr" path="res://song_files/Horse cock.wav" id="2_rtiht"]
-[ext_resource type="FontFile" path="res://CitypopMainDEMO-Regular.ttf" id="4_4nlvb"]
+[ext_resource type="Texture2D" uid="uid://5du4b8t7nc6" path="res://assets/ui/player_select-31.svg" id="3_07tjv"]
+[ext_resource type="Texture2D" uid="uid://jbh14b0dtpn2" path="res://assets/ui/arrows-02.svg" id="3_lw0vm"]
+[ext_resource type="Texture2D" uid="uid://wn6ly6vseydy" path="res://assets/ui/main_title_Logo.svg" id="4_dakkq"]
+[ext_resource type="Texture2D" uid="uid://dsnxwb7g16wij" path="res://assets/ui/player_select-28.svg" id="4_fjdmj"]
+[ext_resource type="Texture2D" uid="uid://bgjbeufsyleak" path="res://assets/ui/title_backdrop-12.svg" id="4_ypndp"]
+[ext_resource type="Texture2D" uid="uid://dwwvqwxbvr25e" path="res://assets/ui/player_select-29.svg" id="5_sdj33"]
+[ext_resource type="Texture2D" uid="uid://dg5b7h82lwgd6" path="res://assets/ui/player_select-30.svg" id="6_gls3l"]
+[ext_resource type="Texture2D" uid="uid://bsaoopc04r0nd" path="res://assets/ui/menu_text-27.svg" id="7_8bwy0"]
+[ext_resource type="StyleBox" uid="uid://qm7tk2qave3t" path="res://assets/song_focus.tres" id="10_p4v4f"]
+[ext_resource type="Texture2D" uid="uid://craj2r0ofvne3" path="res://assets/ui/cool_text-43.svg" id="14_sbx2s"]
+[ext_resource type="Texture2D" uid="uid://bc7a35l5c2nsg" path="res://assets/ui/cool_text-42.svg" id="15_d18ca"]
+
+[sub_resource type="Animation" id="Animation_foiqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ievxj"]
+resource_name = "scale"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o08kq"]
+_data = {
+"RESET": SubResource("Animation_foiqq"),
+"scale": SubResource("Animation_ievxj")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,49 +61,124 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_pnscu")
 
-[node name="PlayerSelect" type="VBoxContainer" parent="."]
+[node name="Back" parent="." instance=ExtResource("2_milb2")]
+visible = false
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = -121.0
+offset_right = 380.0
+offset_bottom = -80.0
+grow_vertical = 0
+theme_override_styles/hover = ExtResource("10_p4v4f")
+theme_override_styles/pressed = ExtResource("10_p4v4f")
+theme_override_styles/focus = ExtResource("10_p4v4f")
+text = "BACK"
+alignment = 0
+
+[node name="TextureRect" type="TextureRect" parent="Back"]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -136.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = 80.0
+texture = ExtResource("3_lw0vm")
+flip_h = true
+
+[node name="PlayerSelect" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerSelect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 684.0
+offset_bottom = 217.0
+texture = ExtResource("2_1u3o8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSelect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -142.0
-offset_top = -52.0
-offset_right = 142.0
-offset_bottom = 52.0
+offset_left = -102.5
+offset_top = -148.0
+offset_right = 102.5
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="PlayerSelect"]
+[node name="OnePlayer" type="TextureButton" parent="PlayerSelect/VBoxContainer"]
 layout_mode = 2
-text = "Player select"
+texture_normal = ExtResource("3_07tjv")
+texture_pressed = ExtResource("4_fjdmj")
+texture_hover = ExtResource("4_fjdmj")
+texture_focused = ExtResource("4_fjdmj")
 
-[node name="OnePlayer" parent="PlayerSelect" instance=ExtResource("2_milb2")]
+[node name="TwoPlayers" type="TextureButton" parent="PlayerSelect/VBoxContainer"]
 layout_mode = 2
-text = "One Player"
+texture_normal = ExtResource("5_sdj33")
+texture_pressed = ExtResource("6_gls3l")
+texture_hover = ExtResource("6_gls3l")
+texture_focused = ExtResource("6_gls3l")
 
-[node name="TwoPlayer" parent="PlayerSelect" instance=ExtResource("2_milb2")]
-layout_mode = 2
-text = "Two Players"
-
-[node name="SongSelect" type="ScrollContainer" parent="."]
+[node name="SongSelect" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -143.0
-offset_top = -142.0
-offset_right = 143.0
-offset_bottom = 143.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="SongSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -793.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.172549)
 
 [node name="Songs" type="VBoxContainer" parent="SongSelect"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -822.0
+offset_top = -13.0
+offset_right = -40.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="SongSelect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 638.0
+offset_bottom = 213.0
+texture = ExtResource("7_8bwy0")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rtiht")
@@ -72,41 +196,92 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Main"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -918.0
-offset_top = -507.0
-offset_right = -74.0
-offset_bottom = -317.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0.862745, 0.752941, 0.482353, 1)
-theme_override_constants/outline_size = 40
-theme_override_fonts/font = ExtResource("4_4nlvb")
-theme_override_font_sizes/font_size = 100
-text = "UI-DANCE 
-BATTLE"
+[node name="TextureRect2" type="TextureRect" parent="Main"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 711.0
+offset_bottom = 440.0
+texture = ExtResource("4_ypndp")
 
-[node name="Start" parent="Main" instance=ExtResource("2_milb2")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="Main/TextureRect2"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 738.0
+offset_bottom = 320.0
+texture = ExtResource("4_dakkq")
+
+[node name="StartMenu" type="VBoxContainer" parent="Main"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 384.0
+offset_right = 546.0
+offset_bottom = 584.0
+theme_override_constants/separation = 12
+
+[node name="Start" parent="Main/StartMenu" instance=ExtResource("2_milb2")]
+layout_direction = 2
+layout_mode = 2
 text = "START"
+alignment = 0
+focus_on_visibility = true
 
-[connection signal="pressed" from="PlayerSelect/OnePlayer" to="." method="_on_one_player_pressed"]
-[connection signal="pressed" from="PlayerSelect/TwoPlayer" to="." method="_on_two_player_pressed"]
-[connection signal="pressed" from="Main/Start" to="." method="_on_start_pressed"]
+[node name="Options" parent="Main/StartMenu" instance=ExtResource("2_milb2")]
+layout_mode = 2
+text = "OPTIONS"
+alignment = 0
+
+[node name="SongEditor" parent="Main/StartMenu" instance=ExtResource("2_milb2")]
+layout_mode = 2
+text = "SONG EDITOR"
+alignment = 0
+
+[node name="Quit" parent="Main/StartMenu" instance=ExtResource("2_milb2")]
+layout_mode = 2
+text = "QUIT"
+alignment = 0
+
+[node name="TextureRect3" type="TextureRect" parent="Main"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -659.0
+offset_top = -505.0
+offset_right = -144.0
+offset_bottom = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(263, 180)
+texture = ExtResource("14_sbx2s")
+
+[node name="TextureRect" type="TextureRect" parent="Main/TextureRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -180.5
+offset_right = 257.5
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(261.111, 176.852)
+texture = ExtResource("15_d18ca")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/TextureRect3"]
+autoplay = "scale"
+libraries = {
+"": SubResource("AnimationLibrary_o08kq")
+}
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PlayerSelect/VBoxContainer/OnePlayer" to="." method="_on_one_player_pressed"]
+[connection signal="pressed" from="PlayerSelect/VBoxContainer/TwoPlayers" to="." method="_on_two_player_pressed"]
+[connection signal="pressed" from="Main/StartMenu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main/StartMenu/Quit" to="." method="_on_quit_pressed"]

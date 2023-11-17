@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://b5007p48ie1pl"]
+
+[ext_resource type="Script" path="res://arrow_home.gd" id="1_rq2h7"]
+[ext_resource type="PackedScene" uid="uid://5cniqyqh67hm" path="res://hit_effect.tscn" id="2_6gpi5"]
+[ext_resource type="Texture2D" uid="uid://byww8djwcbrqj" path="res://assets/perfect_animated_texture.tres" id="4_kpmkv"]
+[ext_resource type="Texture2D" uid="uid://mln6cfdbirtr" path="res://assets/ui/arrows-01.svg" id="4_yl68m"]
+[ext_resource type="Texture2D" uid="uid://cpd41t2elo8vk" path="res://assets/ui/evaluation_particles/evaluation-34.svg" id="5_n0var"]
+[ext_resource type="Texture2D" uid="uid://dk82h45xh7fy8" path="res://assets/ui/evaluation_particles/evaluation-35.svg" id="6_penwv"]
+[ext_resource type="Texture2D" uid="uid://baheg3ikj8pg0" path="res://assets/ui/evaluation_particles/evaluation-36.svg" id="7_204nd"]
+[ext_resource type="Texture2D" uid="uid://cyvoyyyn6naw8" path="res://assets/ui/evaluation_particles/evaluation-37.svg" id="8_cgd6s"]
+[ext_resource type="Texture2D" uid="uid://dswpes4pwgipt" path="res://assets/ui/evaluation_particles/evaluation-38.svg" id="9_uxdb0"]
+
+[sub_resource type="Animation" id="Animation_1tkhe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ssx4p"]
+resource_name = "hit"
+length = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.061957),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8kuw"]
+_data = {
+"RESET": SubResource("Animation_1tkhe"),
+"hit": SubResource("Animation_ssx4p")
+}
+
+[node name="ArrowHome" type="Node2D"]
+script = ExtResource("1_rq2h7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+texture_filter = 1
+position = Vector2(64, 64)
+texture = ExtResource("4_yl68m")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q8kuw")
+}
+
+[node name="ParticleEffects" type="Node2D" parent="."]
+
+[node name="Perfect" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("4_kpmkv")
+color = Color(0.309804, 1, 0.823529, 1)
+sparkles = true
+
+[node name="Great" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("5_n0var")
+color = Color(1, 0.427451, 0.67451, 1)
+
+[node name="Good" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("6_penwv")
+color = Color(0.254902, 0.670588, 1, 1)
+
+[node name="Ok" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("7_204nd")
+color = Color(1, 0.92549, 0.454902, 1)
+
+[node name="Bad" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("8_cgd6s")
+color = Color(1, 0.647059, 0.458824, 1)
+
+[node name="Miss" parent="ParticleEffects" instance=ExtResource("2_6gpi5")]
+text_texture = ExtResource("9_uxdb0")
+color = Color(1, 0.27451, 0.388235, 1)

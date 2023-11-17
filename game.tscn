@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds0ifq1qlnwci"]
+[gd_scene load_steps=6 format=3 uid="uid://ds0ifq1qlnwci"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_8rg6r"]
 [ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="3_rt6i8"]
 [ext_resource type="PackedScene" uid="uid://mwcq6tvkqdmw" path="res://button_plus.tscn" id="4_i5p1w"]
 [ext_resource type="AudioStream" uid="uid://b2vonf6ftjxnx" path="res://sfx/321 go.wav" id="4_ly35q"]
+[ext_resource type="Theme" uid="uid://cptjb4qs2ykw3" path="res://assets/main_theme.tres" id="5_nvrjc"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_8rg6r")
@@ -58,6 +59,7 @@ layout_mode = 2
 text = "Menu"
 
 [node name="CountDown" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
@@ -88,6 +90,7 @@ one_shot = true
 stream = ExtResource("4_ly35q")
 
 [node name="WinScreen" type="Control" parent="."]
+visible = false
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
@@ -133,6 +136,32 @@ focus_on_visibility = true
 [node name="Menu" parent="WinScreen/VBoxContainer" instance=ExtResource("4_i5p1w")]
 layout_mode = 2
 text = "Menu"
+
+[node name="Score" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.0
+offset_top = 40.0
+offset_right = 338.0
+offset_bottom = 84.0
+grow_horizontal = 2
+
+[node name="P1Score" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_nvrjc")
+text = "0"
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="Score"]
+layout_mode = 2
+
+[node name="P2Score" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_nvrjc")
+text = "0"
 
 [connection signal="finished" from="Song" to="." method="_on_song_finished"]
 [connection signal="pressed" from="PauseScreen/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgi5a76ircjts"]
 
-[ext_resource type="Texture2D" uid="uid://ceqdjy8qp7tev" path="res://arrow_placeholder.svg" id="1_7ldli"]
 [ext_resource type="Script" path="res://arrow_object.gd" id="1_xa68g"]
+[ext_resource type="Texture2D" uid="uid://jbh14b0dtpn2" path="res://assets/ui/arrows-02.svg" id="2_14ofu"]
 
 [node name="ArrowObject" type="Node2D"]
 position = Vector2(2.08165e-12, 64)
@@ -11,32 +11,36 @@ script = ExtResource("1_xa68g")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left"]
 texture_filter = 1
-position = Vector2(33, 22)
-texture = ExtResource("1_7ldli")
+position = Vector2(64, 64)
+rotation = 3.14159
+texture = ExtResource("2_14ofu")
+offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Down" type="Node2D" parent="."]
-position = Vector2(96, 2.08165e-12)
+position = Vector2(160, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Down"]
 texture_filter = 1
-position = Vector2(33, 22)
-rotation = -1.5708
-texture = ExtResource("1_7ldli")
+position = Vector2(64, 64)
+rotation = 1.5708
+texture = ExtResource("2_14ofu")
+offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Up" type="Node2D" parent="."]
-position = Vector2(192, 2.08165e-12)
+position = Vector2(320, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Up"]
 texture_filter = 1
-position = Vector2(33, 22)
-rotation = 1.5708
-texture = ExtResource("1_7ldli")
+position = Vector2(64, 64)
+rotation = -1.5708
+texture = ExtResource("2_14ofu")
+offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="Right" type="Node2D" parent="."]
-position = Vector2(288, 2.08165e-12)
+position = Vector2(480, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Right"]
 texture_filter = 1
-position = Vector2(33, 22)
-rotation = 3.14159
-texture = ExtResource("1_7ldli")
+position = Vector2(64, 64)
+texture = ExtResource("2_14ofu")
+offset = Vector2(2.08165e-12, 2.08165e-12)

@@ -1,7 +1,7 @@
 extends Resource
 class_name Song
 
-@export var song_name: String = "Untitled song"
+@export_multiline var song_name: String = "Untitled song"
 
 @export var bpm: int = 120
 @export var song_file: AudioStream

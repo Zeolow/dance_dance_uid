@@ -7,6 +7,8 @@ var songs: Array[Song]
 var player_amount: int
 var main_menu_scene_path = "res://main_menu.tscn"
 
+enum Evaluation {PERFECT, GREAT, GOOD, OK, BAD, MISS}
+
 func set_song(song: Song) -> void:
 	selected_song = song
 	print("song set!")

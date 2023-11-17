@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://dojeipwis0umx"]
+[gd_scene load_steps=13 format=3 uid="uid://dojeipwis0umx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_08eyw"]
 [ext_resource type="Script" path="res://song.gd" id="2_782eh"]
 [ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="3_cfc10"]
+[ext_resource type="Shader" path="res://grid.gdshader" id="4_n11ve"]
 [ext_resource type="PackedScene" uid="uid://dldvmq5n5ud76" path="res://demian.tscn" id="4_sonkn"]
+[ext_resource type="Texture2D" uid="uid://dijeakyncgvpe" path="res://assets/textures/grid_tex_2.png" id="5_jb1u1"]
 
 [sub_resource type="Resource" id="Resource_at6er"]
 script = ExtResource("2_782eh")
-song_name = "HKänner du någon med blöja eller?!"
+song_name = "KÄNNER DU NAGON
+MED BLÖJA ELLER?!"
 bpm = 156
 song_file = ExtResource("3_cfc10")
 arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]
@@ -24,12 +27,19 @@ song_name = "Cool låt"
 bpm = 200
 arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_t3q72"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4vpp"]
+render_priority = 0
+shader = ExtResource("4_n11ve")
+shader_parameter/color = Color(0.576471, 0.576471, 0.576471, 1)
+shader_parameter/subdivisions = Vector2(200, 200)
+shader_parameter/alpha_tex = ExtResource("5_jb1u1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0g2cg"]
 
 [sub_resource type="Environment" id="Environment_omioe"]
 background_mode = 1
 background_color = Color(0.8, 0.8, 0.8, 1)
-ambient_light_color = Color(0.85098, 0.85098, 0.85098, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_08eyw")
@@ -44,8 +54,9 @@ fov = 75.8
 near = 0.055
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.12774, 0, 0, 0, 0.0267176, 0, 0, 0, 6.12774, 0, -0.00826323, 0)
-mesh = SubResource("CylinderMesh_t3q72")
+transform = Transform3D(62.7047, 0, 0, 0, 0.0267176, 0, 0, 0, 62.7047, 0, -0.00826323, 0)
+material_override = SubResource("ShaderMaterial_p4vpp")
+mesh = SubResource("PlaneMesh_0g2cg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.0210122, 0.874807, -0.484016, -3.26074e-17, 0.484123, 0.875, 0.999779, 0.0183857, -0.0101725, 0, 0, 0)

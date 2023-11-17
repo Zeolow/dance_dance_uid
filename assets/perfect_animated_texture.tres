@@ -1,0 +1,14 @@
+[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://byww8djwcbrqj"]
+
+[ext_resource type="Texture2D" uid="uid://j2djyxvh0pxm" path="res://assets/ui/evaluation_particles/evaluation-39.svg" id="1_xbx77"]
+[ext_resource type="Texture2D" uid="uid://b6a730d88ueji" path="res://assets/ui/evaluation_particles/perfect_2.svg" id="2_lemdt"]
+[ext_resource type="Texture2D" uid="uid://dagbn21efg36d" path="res://assets/ui/evaluation_particles/evaluation-40.svg" id="3_iaejh"]
+
+[resource]
+frames = 3
+frame_0/texture = ExtResource("1_xbx77")
+frame_0/duration = 0.18
+frame_1/texture = ExtResource("2_lemdt")
+frame_1/duration = 0.18
+frame_2/texture = ExtResource("3_iaejh")
+frame_2/duration = 0.18

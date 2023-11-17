@@ -6,7 +6,10 @@ var song_button_scene: Resource = preload("res://song_button.tscn")
 @onready var playerSelect = $PlayerSelect
 @onready var songSelect = $SongSelect
 @onready var main = $Main
+
 var songs_loaded: bool = false
+
+var current_menu: String = "Main"
 
 signal song_selected()
 
@@ -14,7 +17,7 @@ func _ready():
 	playerSelect.visible = false
 	songSelect.visible = false
 	main.visible = true
-	$Main/Start.grab_focus()
+	$Main/StartMenu/Start.grab_focus()
 	
 
 func _on_one_player_pressed():
@@ -24,12 +27,12 @@ func _on_one_player_pressed():
 
 func _on_two_player_pressed():
 	Globals.set_player_amount(2)
+	print("player_selected")
 	player_selected()
 
 
 func player_selected():
-	playerSelect.visible = false
-	songSelect.visible = true
+	show_menu("SongSelect")
 	$SongSelect/Songs.get_child(0).grab_focus()
 
 func load_songs(songs: Array[Song]):
@@ -44,16 +47,39 @@ func create_song_button(s: Song)-> void:
 	song_button.song_ref = s
 	song_button.song_selected.connect(_on_song_selected)
 	song_button_parent.add_child(song_button)
-	print("button created")
 	print(song_button)
 	
+func show_menu(node_path: String):
+	$Main.visible = false
+	$PlayerSelect.visible = false
+	$SongSelect.visible = false
+	if node_path == "Main":
+		$Back.visible = false
+	else:
+		$Back.visible = true
+	current_menu = node_path
+	get_node(node_path).visible = true
 
 func _on_song_selected():
-	print("song selected")
 	emit_signal("song_selected")
 
 
 func _on_start_pressed():
-	main.visible = false
-	playerSelect.visible = true
-	$PlayerSelect/OnePlayer.grab_focus()
+	show_menu("PlayerSelect")
+	$PlayerSelect/VBoxContainer/OnePlayer.grab_focus()
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+
+func _on_back_pressed():
+	var menu_to_show: String
+	match current_menu:
+		"Main":
+			menu_to_show = "Main"
+		"PlayerSelect":
+			menu_to_show = "Main"
+		"SongSelect":
+			menu_to_show = "PlayerSelect"
+	show_menu(menu_to_show)

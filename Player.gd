@@ -4,10 +4,10 @@ class_name Player
 @export var action_codes = ["left", "down", "up", "right"]
 
 var song: Song
-
+var player_nr: int
 var arrow_speed: float
-var spacing: float = 64
-var arrow_size: float = 64.0 # make global variable
+var spacing: float = 64.0
+var arrow_size: float = 128.0 # make global variable
 var arrow_object_scene = preload("res://arrow_object.tscn")
 var distance_to_next_arrow: float
 var current_arrow_index: int = 0
@@ -21,8 +21,10 @@ var evaluations: Array = ["_______","_______","_______","_______"]
 
 var paused: bool = false
 
+signal score_updated(score: int, player_nr: int)
+
 @onready var arrow_parent_node: Node2D= $Arrows
-@onready var arrow_home: Node2D = $ArrowHome
+@onready var arrow_home: Node2D = $ArrowHomes
 
 func reset_song():
 	print("resetting song")
@@ -50,6 +52,11 @@ func _ready() -> void:
 	for ar_obj in song.arrow_data:
 		create_arrow_object(i, ar_obj, spacing)
 		i += 1
+	
+	# Effects handled locally in ArrowHomes so they need the key
+	for j in range(arrow_home.get_child_count()):
+		arrow_home.get_child(j).action_code = action_codes[j]
+		j += 1
 	
 	arrow_objects = arrow_parent_node.get_children()
 	current_arrow_object = arrow_parent_node.get_child(0)
@@ -110,15 +117,30 @@ func create_arrow_object(index: int, arrows: Array, spacing: float) -> void:
 
 func calc_score(dist: float, index: int) -> float:
 	var s: int = 0.0
-	if dist <= 10.0:
-		evaluations[index] = "PERFECT"
+	var evaluation: int
+	if dist <= 4.0:
+		evaluation = Globals.Evaluation.PERFECT
 		s = 10.0 * multiplier
-	elif dist <= 32.0:
-		evaluations[index] = "OK     "
+	elif dist <= 8.0:
+		evaluation = Globals.Evaluation.GREAT
+		s = 8.0 * multiplier
+	elif dist <= 16.0:
+		evaluation = Globals.Evaluation.GOOD
+		s = 4.0 * multiplier
+	elif dist <= 24.0:
 		s = 1.0 * multiplier
+		evaluation = Globals.Evaluation.OK
+	elif dist <= 32.0:
+		s = 0.5 * multiplier
+		evaluation = Globals.Evaluation.BAD
+	trigger_hit_effect(index, evaluation)
 	
+	emit_signal("score_updated", score, player_nr)
 	$Debug/Score/Score.text = str(score + s)
 	return s
+
+func trigger_hit_effect(arrow_index: int, evaluation_nr: int):
+	arrow_home.get_child(arrow_index).trigger_effect(evaluation_nr)
 
 func calc_multiplier(combo: int) -> int:
 	if combo >= 20:
