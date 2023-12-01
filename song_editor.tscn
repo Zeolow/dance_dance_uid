@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_tmo5e"]
 script = ExtResource("2_duxf7")
 song_name = "Untitled song"
-bpm = 120
+bpm = 156
 song_file = ExtResource("2_3iu57")
 arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]
 
@@ -97,6 +97,19 @@ text = "Elapsed time:"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "00.00"
+horizontal_alignment = 2
+
+[node name="CurrentIndex" type="HBoxContainer" parent="SongControls"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SongControls/CurrentIndex"]
+layout_mode = 2
+text = "Current Index"
+
+[node name="Index" type="Label" parent="SongControls/CurrentIndex"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
 horizontal_alignment = 2
 
 [node name="Pause" type="Button" parent="SongControls"]

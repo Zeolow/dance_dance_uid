@@ -2,7 +2,6 @@ extends Node2D
 class_name Player
 
 @export var action_codes = ["left", "down", "up", "right"]
-
 var song: Song
 var player_nr: int
 var arrow_speed: float
