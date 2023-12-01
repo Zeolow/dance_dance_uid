@@ -108,7 +108,6 @@ func play_pause() -> void:
 		print(current_song_position)
 		var song_t = song.song_file.get_length()
 		var play_pos = song_t/arrowContainer.get_child_count() * focused_index
-		print("PLAY;", play_pos)
 		audioStreamPlayer.play(play_pos)
 	playing = !playing
 	

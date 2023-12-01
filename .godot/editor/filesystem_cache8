@@ -1,42 +1,42 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701369949
+::res://::1701446945
 arrow_edit_object.gd::GDScript::-1::1700242537::0::1::::ArrowEditObject<>HBoxContainer<>::
-arrow_edit_object.tscn::PackedScene::6665195368148899496::1700253069::0::1::::<><>::uid://ck5618od4570k::::res://assets/arrow_edit_textures/arrow_edit_left_toggled.png<>res://arrow_edit_object.gd<>uid://cutyftmyi2ew::::res://assets/arrow_edit_textures/arrow_edit_left_untoggled.png<>uid://qa74cq4rmuwv::::res://assets/arrow_edit_textures/arrow_edit_down_toggled.png<>uid://drrx5ihf6ylid::::res://assets/arrow_edit_textures/arrow_edit_down_untoggled.png<>uid://b8f7msajtdfad::::res://assets/arrow_edit_textures/arrow_edit_up_toggled.png<>uid://dl6fjmlpoelgd::::res://assets/arrow_edit_textures/arrow_edit_up_untoggled.png<>uid://dt3abcbfwnul4::::res://assets/arrow_edit_textures/arrow_edit_right_toggled.png<>uid://pa0pxbao6d7u::::res://assets/arrow_edit_textures/arrow_edit_right_untoggled.png
+arrow_edit_object.tscn::PackedScene::6665195368148899496::1701373399::0::1::::<><>::uid://ck5618od4570k::::res://assets/arrow_edit_textures/arrow_edit_left_toggled.png<>res://arrow_edit_object.gd<>uid://cutyftmyi2ew::::res://assets/arrow_edit_textures/arrow_edit_left_untoggled.png<>uid://qa74cq4rmuwv::::res://assets/arrow_edit_textures/arrow_edit_down_toggled.png<>uid://drrx5ihf6ylid::::res://assets/arrow_edit_textures/arrow_edit_down_untoggled.png<>uid://b8f7msajtdfad::::res://assets/arrow_edit_textures/arrow_edit_up_toggled.png<>uid://dl6fjmlpoelgd::::res://assets/arrow_edit_textures/arrow_edit_up_untoggled.png<>uid://dt3abcbfwnul4::::res://assets/arrow_edit_textures/arrow_edit_right_toggled.png<>uid://pa0pxbao6d7u::::res://assets/arrow_edit_textures/arrow_edit_right_untoggled.png
 arrow_home.gd::GDScript::-1::1699976402::0::1::::<>Node2D<>::
-arrow_home.tscn::PackedScene::4545271341069512945::1700253069::0::1::::<><>::res://arrow_home.gd<>uid://5cniqyqh67hm::::res://hit_effect.tscn<>uid://byww8djwcbrqj::::res://assets/perfect_animated_texture.tres<>uid://mln6cfdbirtr::::res://assets/ui/arrows-01.svg<>uid://cpd41t2elo8vk::::res://assets/ui/evaluation_particles/evaluation-34.svg<>uid://dk82h45xh7fy8::::res://assets/ui/evaluation_particles/evaluation-35.svg<>uid://baheg3ikj8pg0::::res://assets/ui/evaluation_particles/evaluation-36.svg<>uid://cyvoyyyn6naw8::::res://assets/ui/evaluation_particles/evaluation-37.svg<>uid://dswpes4pwgipt::::res://assets/ui/evaluation_particles/evaluation-38.svg
+arrow_home.tscn::PackedScene::4545271341069512945::1701373399::0::1::::<><>::res://arrow_home.gd<>uid://5cniqyqh67hm::::res://hit_effect.tscn<>uid://byww8djwcbrqj::::res://assets/perfect_animated_texture.tres<>uid://mln6cfdbirtr::::res://assets/ui/arrows-01.svg<>uid://cpd41t2elo8vk::::res://assets/ui/evaluation_particles/evaluation-34.svg<>uid://dk82h45xh7fy8::::res://assets/ui/evaluation_particles/evaluation-35.svg<>uid://baheg3ikj8pg0::::res://assets/ui/evaluation_particles/evaluation-36.svg<>uid://cyvoyyyn6naw8::::res://assets/ui/evaluation_particles/evaluation-37.svg<>uid://dswpes4pwgipt::::res://assets/ui/evaluation_particles/evaluation-38.svg
 arrow_home_placeholder.svg::CompressedTexture2D::433154241806482508::1699457985::1699713260::1::::<><>::
 arrow_object.gd::GDScript::-1::1699704559::0::1::::<>Node2D<>::
-arrow_object.tscn::PackedScene::7598733373745401884::1700253069::0::1::::<><>::res://arrow_object.gd<>uid://jbh14b0dtpn2::::res://assets/ui/arrows-02.svg
+arrow_object.tscn::PackedScene::7598733373745401884::1701373399::0::1::::<><>::res://arrow_object.gd<>uid://jbh14b0dtpn2::::res://assets/ui/arrows-02.svg
 arrow_placeholder.svg::CompressedTexture2D::5086826321413972377::1700233031::1700233046::1::::<><>::
 ButtonPlus.gd::GDScript::-1::1699662862::0::1::::ButtonPlus<>Button<>::
-button_plus.tscn::PackedScene::887834099476993338::1700253069::0::1::::<><>::res://ButtonPlus.gd<>uid://cptjb4qs2ykw3::::res://assets/main_theme.tres<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://cfxi077u3eube::::res://sfx/Enter.wav
+button_plus.tscn::PackedScene::887834099476993338::1701373399::0::1::::<><>::res://ButtonPlus.gd<>uid://cptjb4qs2ykw3::::res://assets/main_theme.tres<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://cfxi077u3eube::::res://sfx/Enter.wav
 default_bus_layout.tres::AudioBusLayout::2974692712876848473::1699646353::0::1::::<><>::
 demian.glb::PackedScene::5649973512218820081::1699727571::1699727806::1::::<><>::
-demian.tscn::PackedScene::7938829838084069259::1700253069::0::1::::<><>::
+demian.tscn::PackedScene::7938829838084069259::1701373399::0::1::::<><>::
 game.gd::GDScript::-1::1699977531::0::1::::<>Node3D<>::
-game.tscn::PackedScene::8474766226607756732::1700253069::0::1::::<><>::res://game.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://b2vonf6ftjxnx::::res://sfx/321 go.wav<>uid://cptjb4qs2ykw3::::res://assets/main_theme.tres
+game.tscn::PackedScene::8474766226607756732::1701373399::0::1::::<><>::res://game.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://b2vonf6ftjxnx::::res://sfx/321 go.wav<>uid://cptjb4qs2ykw3::::res://assets/main_theme.tres
 Globals.gd::GDScript::-1::1699974567::0::1::::<>Node<>::
-grid.gdshader::Shader::-1::1700253104::0::1::::<><>::
+grid.gdshader::Shader::-1::1701373457::0::1::::<><>::
 hit_effect.gd::GDScript::-1::1699974069::0::1::::HitEffect<>Node2D<>::
-hit_effect.tscn::PackedScene::2110598550092779362::1700253069::0::1::::<><>::res://hit_effect.gd<>uid://vqmayl0iwbu5::::res://assets/textures/arrow_hit_outline.svg<>uid://ctpadk2gteufx::::res://assets/ui/star_particle_star_particle.svg<>uid://j2djyxvh0pxm::::res://assets/ui/evaluation_particles/evaluation-39.svg<>uid://b6a730d88ueji::::res://assets/ui/evaluation_particles/perfect_2.svg<>uid://dagbn21efg36d::::res://assets/ui/evaluation_particles/evaluation-40.svg
+hit_effect.tscn::PackedScene::2110598550092779362::1701373399::0::1::::<><>::res://hit_effect.gd<>uid://vqmayl0iwbu5::::res://assets/textures/arrow_hit_outline.svg<>uid://ctpadk2gteufx::::res://assets/ui/star_particle_star_particle.svg<>uid://j2djyxvh0pxm::::res://assets/ui/evaluation_particles/evaluation-39.svg<>uid://b6a730d88ueji::::res://assets/ui/evaluation_particles/perfect_2.svg<>uid://dagbn21efg36d::::res://assets/ui/evaluation_particles/evaluation-40.svg
 icon.svg::CompressedTexture2D::1070766656262614419::1699454248::1699713260::1::::<><>::
 main.gd::GDScript::-1::1699707305::0::1::::<>Node3D<>::
-main.tscn::PackedScene::8160743238345092455::1700253069::0::1::::<><>::res://main.gd<>res://song.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>res://grid.gdshader<>uid://dldvmq5n5ud76::::res://demian.tscn<>uid://dijeakyncgvpe::::res://assets/textures/grid_tex_2.png
+main.tscn::PackedScene::8160743238345092455::1701373398::0::1::::<><>::res://main.gd<>res://song.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>res://grid.gdshader<>uid://dldvmq5n5ud76::::res://demian.tscn<>uid://dijeakyncgvpe::::res://assets/textures/grid_tex_2.png
 MainMenu.gd::GDScript::-1::1699820541::0::1::::<>Control<>::
-main_menu.tscn::PackedScene::2368028616120992283::1700253069::0::1::::<><>::res://MainMenu.gd<>uid://i2ayi0pnkcyc::::res://assets/ui/menu_text-26.svg<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://vvg55mav62qr::::res://song_files/Horse cock.wav<>uid://5du4b8t7nc6::::res://assets/ui/player_select-31.svg<>uid://jbh14b0dtpn2::::res://assets/ui/arrows-02.svg<>uid://wn6ly6vseydy::::res://assets/ui/main_title_Logo.svg<>uid://dsnxwb7g16wij::::res://assets/ui/player_select-28.svg<>uid://bgjbeufsyleak::::res://assets/ui/title_backdrop-12.svg<>uid://dwwvqwxbvr25e::::res://assets/ui/player_select-29.svg<>uid://dg5b7h82lwgd6::::res://assets/ui/player_select-30.svg<>uid://bsaoopc04r0nd::::res://assets/ui/menu_text-27.svg<>uid://qm7tk2qave3t::::res://assets/song_focus.tres<>uid://craj2r0ofvne3::::res://assets/ui/cool_text-43.svg<>uid://bc7a35l5c2nsg::::res://assets/ui/cool_text-42.svg
-Player.gd::GDScript::-1::1699977250::0::1::::Player<>Node2D<>::
-player.tscn::PackedScene::8998863298942575314::1700253069::0::1::::<><>::res://Player.gd<>uid://b5007p48ie1pl::::res://arrow_home.tscn
+main_menu.tscn::PackedScene::2368028616120992283::1701373398::0::1::::<><>::res://MainMenu.gd<>uid://i2ayi0pnkcyc::::res://assets/ui/menu_text-26.svg<>uid://mwcq6tvkqdmw::::res://button_plus.tscn<>uid://vvg55mav62qr::::res://song_files/Horse cock.wav<>uid://5du4b8t7nc6::::res://assets/ui/player_select-31.svg<>uid://jbh14b0dtpn2::::res://assets/ui/arrows-02.svg<>uid://wn6ly6vseydy::::res://assets/ui/main_title_Logo.svg<>uid://dsnxwb7g16wij::::res://assets/ui/player_select-28.svg<>uid://bgjbeufsyleak::::res://assets/ui/title_backdrop-12.svg<>uid://dwwvqwxbvr25e::::res://assets/ui/player_select-29.svg<>uid://dg5b7h82lwgd6::::res://assets/ui/player_select-30.svg<>uid://bsaoopc04r0nd::::res://assets/ui/menu_text-27.svg<>uid://qm7tk2qave3t::::res://assets/song_focus.tres<>uid://craj2r0ofvne3::::res://assets/ui/cool_text-43.svg<>uid://bc7a35l5c2nsg::::res://assets/ui/cool_text-42.svg
+Player.gd::GDScript::-1::1701372709::0::1::::Player<>Node2D<>::
+player.tscn::PackedScene::8998863298942575314::1701373399::0::1::::<><>::res://Player.gd<>uid://b5007p48ie1pl::::res://arrow_home.tscn
 song.gd::GDScript::-1::1699824980::0::1::::Song<>Resource<>::
 song.tres::Resource/Resource::8119889779191612042::1699630014::0::1::::<><>::res://song.gd
 song_button.gd::GDScript::-1::1699823637::0::1::::<>Button<>::
-song_button.tscn::PackedScene::7719700410800759300::1700253069::0::1::::<><>::uid://cptjb4qs2ykw3::::res://assets/main_theme.tres<>res://song_button.gd<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://qm7tk2qave3t::::res://assets/song_focus.tres<>uid://cfxi077u3eube::::res://sfx/Enter.wav
-song_editor.gd::GDScript::-1::1700253067::0::1::::<>Control<>::
-song_editor.tscn::PackedScene::8069013068312108774::1700253102::0::1::::<><>::res://song_editor.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>res://song.gd
-::res://assets/::1700233578
-button_focus.tres::StyleBoxFlat::923665253959245778::1700231009::0::1::::<><>::
-main_theme.tres::Theme::5865446986761525856::1700231009::0::1::::<><>::uid://cjcxjikvo7axn::::res://fonts/02.10FEN.TTF<>uid://nfovqlvcnmji::::res://assets/button_focus.tres
-perfect_animated_texture.tres::AnimatedTexture::4117764119110518805::1700231009::0::1::::<><>::uid://j2djyxvh0pxm::::res://assets/ui/evaluation_particles/evaluation-39.svg<>uid://b6a730d88ueji::::res://assets/ui/evaluation_particles/perfect_2.svg<>uid://dagbn21efg36d::::res://assets/ui/evaluation_particles/evaluation-40.svg
-song_focus.tres::StyleBoxFlat::1149771472780973763::1700231009::0::1::::<><>::
+song_button.tscn::PackedScene::7719700410800759300::1701373399::0::1::::<><>::uid://cptjb4qs2ykw3::::res://assets/main_theme.tres<>res://song_button.gd<>uid://c1u8jm7g4uy40::::res://sfx/navigate.wav<>uid://qm7tk2qave3t::::res://assets/song_focus.tres<>uid://cfxi077u3eube::::res://sfx/Enter.wav
+song_editor.gd::GDScript::-1::1701373363::0::1::::<>Control<>::
+song_editor.tscn::PackedScene::8069013068312108774::1701373399::0::1::::<><>::res://song_editor.gd<>uid://bkiibk2d1crq6::::res://song_files/haru blöjja 3.wav<>res://song.gd
+::res://assets/::1701369968
+button_focus.tres::StyleBoxFlat::923665253959245778::1701369968::0::1::::<><>::
+main_theme.tres::Theme::5865446986761525856::1701369968::0::1::::<><>::uid://cjcxjikvo7axn::::res://fonts/02.10FEN.TTF<>uid://nfovqlvcnmji::::res://assets/button_focus.tres
+perfect_animated_texture.tres::AnimatedTexture::4117764119110518805::1701369968::0::1::::<><>::uid://j2djyxvh0pxm::::res://assets/ui/evaluation_particles/evaluation-39.svg<>uid://b6a730d88ueji::::res://assets/ui/evaluation_particles/perfect_2.svg<>uid://dagbn21efg36d::::res://assets/ui/evaluation_particles/evaluation-40.svg
+song_focus.tres::StyleBoxFlat::1149771472780973763::1701369968::0::1::::<><>::
 ::res://assets/arrow_edit_textures/::1700233996
 arrow_edit_down_toggled.png::CompressedTexture2D::1125016361104698465::1700233480::1700233578::1::::<><>::
 arrow_edit_down_untoggled.png::CompressedTexture2D::8389017310665637327::1700233952::1700233996::1::::<><>::
