@@ -2,6 +2,8 @@ extends Control
 
 @export var song: Song
 
+const SAVE_SONG_PATH := "res://song_res/"
+
 var scroll_speed: float = 5.0
 var arrow_height: float= 72.0
 var total_beats: float = 1.0
@@ -38,6 +40,8 @@ func _ready():
 	focused_arrow_object = arrowContainer.get_child(0)
 	focused_arrow_object.focus()
 	arrow_height = arrowContainer.get_child(0).size.y
+	
+	load_song()
 
 func _process(delta):
 	if playing:
@@ -86,7 +90,6 @@ func update_arrow_positions() -> void:
 
 func update_display_data() -> void:
 	$SongControls/ElapsedTime/Time.text = str(audioStreamPlayer.get_playback_position())
-	$SongControls/CurrentIndex/Index.text = str(focused_index)
 	
 func set_current_playback_time() -> void:
 	pass
@@ -110,8 +113,37 @@ func play_pause() -> void:
 		var play_pos = song_t/arrowContainer.get_child_count() * focused_index
 		audioStreamPlayer.play(play_pos)
 	playing = !playing
-	
-	
+
+func save_song() -> void:
+	song.song_name = $SongControls/SongName.text
+	song.arrow_data = create_arrow_data()
+	var song_name = $SongControls/SongName.text
+	var save_path = SAVE_SONG_PATH + song_name + ".tres"
+	var result = ResourceSaver.save(song, save_path)
+	assert(result == OK)
+
+func create_arrow_data() -> Array[Array]:
+	var arrow_data: Array[Array]
+	for arrow_obj in arrowContainer.get_children():
+		var toggled = [0,0,0,0]
+		for i in range(arrow_obj.toggled.size()):
+			if arrow_obj.toggled[i]:
+				toggled[i] = 1
+		arrow_data.append(toggled)
+	return arrow_data
+
+func load_song() -> void:
+	$SongControls/SongName.text = song.song_name
+	for i in range(arrowContainer.get_child_count()):
+		var arrow_obj = arrowContainer.get_child(i)
+		var arrow_data = song.arrow_data[i]
+		print(arrow_data)
+		var toggle_array: Array[bool] = [false,false,false,false]
+		for j in range(arrow_data.size()):
+			if arrow_data[j] == 1:
+				toggle_array[j] = true
+		arrow_obj.toggle_from_data(toggle_array)
+
 func trackpad_logic(event):
 	if event is InputEventPanGesture:
 		arrowContainer.position.y -= event.delta.y * scroll_speed

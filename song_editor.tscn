@@ -1,15 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm7xp4c6vy45g"]
+[gd_scene load_steps=4 format=3 uid="uid://dm7xp4c6vy45g"]
 
 [ext_resource type="Script" path="res://song_editor.gd" id="1_edagw"]
-[ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="2_3iu57"]
-[ext_resource type="Script" path="res://song.gd" id="2_duxf7"]
-
-[sub_resource type="Resource" id="Resource_tmo5e"]
-script = ExtResource("2_duxf7")
-song_name = "Untitled song"
-bpm = 156
-song_file = ExtResource("2_3iu57")
-arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]
+[ext_resource type="Resource" uid="uid://c3ockfhtf73g1" path="res://song_res/test.tres" id="2_6gn5a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a5gy"]
 bg_color = Color(1, 1, 1, 0)
@@ -32,7 +24,7 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_edagw")
-song = SubResource("Resource_tmo5e")
+song = ExtResource("2_6gn5a")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -76,15 +68,50 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -205.0
-offset_top = 304.0
-offset_bottom = -304.0
+offset_left = -491.0
+offset_top = 330.0
+offset_right = -286.0
+offset_bottom = -278.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="Title" type="Label" parent="SongControls"]
+layout_mode = 2
+text = "Song File Name"
+
+[node name="SongName" type="LineEdit" parent="SongControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UNNAMED_SONG"
+
+[node name="Save" type="Button" parent="SongControls"]
+layout_mode = 2
+text = "Save"
+
+[node name="HSeparator" type="HSeparator" parent="SongControls"]
+layout_mode = 2
+
 [node name="Play" type="Button" parent="SongControls"]
 layout_mode = 2
-text = "play"
+text = "Play"
+
+[node name="Pause" type="Button" parent="SongControls"]
+layout_mode = 2
+text = "Pause"
+
+[node name="Bpm" type="HBoxContainer" parent="SongControls"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Label" parent="SongControls/Bpm"]
+layout_mode = 2
+text = "BPM:"
+
+[node name="LineEdit" type="LineEdit" parent="SongControls/Bpm"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "156"
+alignment = 2
 
 [node name="ElapsedTime" type="HBoxContainer" parent="SongControls"]
 layout_mode = 2
@@ -99,26 +126,6 @@ size_flags_horizontal = 3
 text = "00.00"
 horizontal_alignment = 2
 
-[node name="CurrentIndex" type="HBoxContainer" parent="SongControls"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="SongControls/CurrentIndex"]
-layout_mode = 2
-text = "Current Index"
-
-[node name="Index" type="Label" parent="SongControls/CurrentIndex"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 2
-
-[node name="Pause" type="Button" parent="SongControls"]
-layout_mode = 2
-text = "pause"
-
-[node name="CheckButton" type="CheckButton" parent="SongControls"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Auto Progress"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="SongControls/Save" to="." method="save_song"]

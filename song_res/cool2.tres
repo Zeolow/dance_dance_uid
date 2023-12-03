@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://csjhqwkiob3lo"]
+
+[ext_resource type="Script" path="res://song.gd" id="1_ajkg2"]
+[ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="2_8hc76"]
+
+[resource]
+script = ExtResource("1_ajkg2")
+song_name = "Untitled song"
+bpm = 156
+song_file = ExtResource("2_8hc76")
+arrow_data = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]]

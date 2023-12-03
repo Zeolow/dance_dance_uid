@@ -1,3 +1,6 @@
+HSeparator
+LineEdit
+TextEdit
 AudioStreamPlayer
 Label
 HBoxContainer
@@ -16,7 +19,6 @@ AnimationPlayer
 ColorRect
 TextureRect
 TextureButton
-HSeparator
 PanelContainer
 MarginContainer
 Container
