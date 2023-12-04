@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y43wcbyli1ac"
+path="res://.godot/imported/Få inte för dig något ( då slår jag dig på pungen).wav-3985dd6a369fbe3c2fe740fbaecd41ad.sample"
+
+[deps]
+
+source_file="res://song_files/Få inte för dig något ( då slår jag dig på pungen).wav"
+dest_files=["res://.godot/imported/Få inte för dig något ( då slår jag dig på pungen).wav-3985dd6a369fbe3c2fe740fbaecd41ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

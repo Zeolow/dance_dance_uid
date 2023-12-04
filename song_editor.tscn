@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm7xp4c6vy45g"]
+[gd_scene load_steps=6 format=3 uid="uid://dm7xp4c6vy45g"]
 
 [ext_resource type="Script" path="res://song_editor.gd" id="1_edagw"]
-[ext_resource type="Resource" uid="uid://c3ockfhtf73g1" path="res://song_res/test.tres" id="2_6gn5a"]
+[ext_resource type="Script" path="res://song.gd" id="2_ka451"]
+[ext_resource type="AudioStream" uid="uid://c43tai44eml5x" path="res://song_files/Känner du någon med blöja 156bpm.wav" id="3_ilbcv"]
+
+[sub_resource type="Resource" id="Resource_oeqor"]
+script = ExtResource("2_ka451")
+song_name = "Untitled song"
+bpm = 156
+song_file = ExtResource("3_ilbcv")
+arrow_data = []
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a5gy"]
 bg_color = Color(1, 1, 1, 0)
@@ -24,7 +32,7 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_edagw")
-song = ExtResource("2_6gn5a")
+song = SubResource("Resource_oeqor")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1

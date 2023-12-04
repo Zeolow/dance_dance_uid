@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c43tai44eml5x"
+path="res://.godot/imported/Känner du någon med blöja 156bpm.wav-a0f6aba1b02c74be5610771fa67a2cfa.sample"
+
+[deps]
+
+source_file="res://song_files/Känner du någon med blöja 156bpm.wav"
+dest_files=["res://.godot/imported/Känner du någon med blöja 156bpm.wav-a0f6aba1b02c74be5610771fa67a2cfa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

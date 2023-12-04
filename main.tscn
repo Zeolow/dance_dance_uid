@@ -1,11 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dojeipwis0umx"]
+[gd_scene load_steps=17 format=3 uid="uid://dojeipwis0umx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_08eyw"]
 [ext_resource type="Script" path="res://song.gd" id="2_782eh"]
 [ext_resource type="AudioStream" uid="uid://bkiibk2d1crq6" path="res://song_files/haru blöjja 3.wav" id="3_cfc10"]
 [ext_resource type="Shader" path="res://grid.gdshader" id="4_n11ve"]
 [ext_resource type="PackedScene" uid="uid://dldvmq5n5ud76" path="res://demian.tscn" id="4_sonkn"]
+[ext_resource type="Resource" path="res://song_res/fa_inte_for_dig_nagot.tres" id="4_tq0d2"]
 [ext_resource type="Texture2D" uid="uid://dijeakyncgvpe" path="res://assets/textures/grid_tex_2.png" id="5_jb1u1"]
+[ext_resource type="Resource" path="res://song_res/start_pa_en_ny_varld.tres" id="5_ywivp"]
+[ext_resource type="Resource" path="res://song_res/varlden_forokar_sig.tres" id="6_4nbpv"]
+[ext_resource type="Resource" path="res://song_res/Känner_du_någon_med_blöjja_eller_2.0.tres" id="7_2di7a"]
 
 [sub_resource type="Resource" id="Resource_at6er"]
 script = ExtResource("2_782eh")
@@ -45,7 +49,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 script = ExtResource("1_08eyw")
 game_scene_path = "res://game.tscn"
 main_menu_scene_path = "res://main_menu.tscn"
-songs = Array[ExtResource("2_782eh")]([SubResource("Resource_at6er"), SubResource("Resource_u1i7d"), SubResource("Resource_to3at")])
+songs = Array[ExtResource("2_782eh")]([SubResource("Resource_at6er"), SubResource("Resource_u1i7d"), SubResource("Resource_to3at"), ExtResource("4_tq0d2"), ExtResource("5_ywivp"), ExtResource("6_4nbpv"), ExtResource("7_2di7a")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.944083, 0.329707, 0, -0.329707, 0.944083, 0, 2.49215, 3.41369)

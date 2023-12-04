@@ -24,6 +24,7 @@ var current_song_position: float = 0.0
 
 
 func _ready():
+	print(song)
 	audioStreamPlayer.stream = song.song_file
 	
 	var total_beats = calc_total_beats()
@@ -37,6 +38,7 @@ func _ready():
 		arrow_object.name = str(i)
 		arrow_object.unfocus()
 		arrowContainer.add_child(arrow_object)
+		song.arrow_data.append([0,0,0,0])
 	focused_arrow_object = arrowContainer.get_child(0)
 	focused_arrow_object.focus()
 	arrow_height = arrowContainer.get_child(0).size.y
@@ -137,7 +139,6 @@ func load_song() -> void:
 	for i in range(arrowContainer.get_child_count()):
 		var arrow_obj = arrowContainer.get_child(i)
 		var arrow_data = song.arrow_data[i]
-		print(arrow_data)
 		var toggle_array: Array[bool] = [false,false,false,false]
 		for j in range(arrow_data.size()):
 			if arrow_data[j] == 1:

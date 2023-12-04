@@ -4,6 +4,7 @@ res://assets/button_focus.tres
 res://assets/main_theme.tres
 res://assets/song_focus.tres
 res://assets/perfect_animated_texture.tres
+res://song_res/test.tres
 res://main_menu.tscn
 res://demian.tscn
 res://button_plus.tscn
@@ -16,6 +17,4 @@ res://game.tscn
 res://song_editor.tscn
 res://arrow_edit_object.tscn
 res://song_editor.gd
-res://song_res/cool2.tres
 res://arrow_edit_object.gd
-res://song_res/test.tres

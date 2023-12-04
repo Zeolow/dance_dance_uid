@@ -38,4 +38,3 @@ func toggle_from_data(toggle_array: Array[bool]):
 	$Down.button_pressed = toggle_array[1]
 	$Up.button_pressed = toggle_array[2]
 	$Right.button_pressed = toggle_array[3]
-	print(toggle_array)
